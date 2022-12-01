@@ -20,7 +20,7 @@ class symptomsCalculator:
         
         return a, b
     
-    def hyperCholesterolemia(self, maxcholestrol, prevMaxCreatinine):
+    def hyperCholesterolemia(self, maxcholestrol):
         
         '''The function calculates whether the patient has Hyper Cholesterolemia utilizing its Medical Report's Constraints'''
         
@@ -38,7 +38,7 @@ class symptomsCalculator:
         else: 
             return False
     
-    def kidneyInjury(self, maxCreatinine):
+    def kidneyInjury(self, maxCreatinine, prevMaxCreatinine):
         
         '''The function calculates whether the patient has Kidney Injury utilizing its Medical Report's Constraints'''
         
