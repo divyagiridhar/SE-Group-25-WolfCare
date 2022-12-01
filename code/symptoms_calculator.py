@@ -24,7 +24,7 @@ class symptomsCalculator:
         
         '''The function calculates whether the patient has Hyper Cholesterolemia utilizing its Medical Report's Constraints'''
         
-        if (maxcholestrol > 2000): 
+        if (maxcholestrol > 200): 
             return True
         else:
             return False
@@ -73,7 +73,7 @@ class symptomsCalculator:
         '''The function calculates whether the patient has Obesity utilizing its Medical Report's Constraints'''
         
         if (height > 0) and (weight > 0):
-            bmi = (weight)/((height/1000)*(height/100))
+            bmi = (weight)/((height/100)*(height/100))
         
         if bmi > 30:
             return True
