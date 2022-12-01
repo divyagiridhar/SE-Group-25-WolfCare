@@ -20,7 +20,7 @@ class symptomsCalculator:
         
         return a, b
     
-    def hyperCholesterolemia(self, maxcholestrol):
+    def hyperCholesterolemia(self, maxcholestrol, prevMaxCreatinine):
         
         '''The function calculates whether the patient has Hyper Cholesterolemia utilizing its Medical Report's Constraints'''
         
