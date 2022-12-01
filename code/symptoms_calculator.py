@@ -1,66 +1,81 @@
 class symptomsCalculator:
+    
+    '''The given class calculates all the symptoms of the Diseases using the required constraints from the Medical Reports and outputs the relative result'''
 
     def acidBaseDisorder(self, minbicarbonate, maxbicarbonate):
         
+        '''The function calculates whether the patient has Acid Base Disorder utilizing its Medical Report's Constraints'''
+        
         # For Metabolic Acidosis
-        if (minbicarbonate < 18.0): # pragma: no cover
+        if (minbicarbonate < 18.0): 
             a = True
-        else: # pragma: no cover
+        else: 
             a = False
         
         #For Metabolic Alkalosis
-        if (maxbicarbonate > 30.0): # pragma: no cover
+        if (maxbicarbonate > 30.0): 
             b = True
-        else: # pragma: no cover
+        else: 
             b = False
         
         return a, b
     
     def hyperCholesterolemia(self, maxcholestrol):
-        if (maxcholestrol > 200): # pragma: no cover
+        
+        '''The function calculates whether the patient has Hyper Cholesterolemia utilizing its Medical Report's Constraints'''
+        
+        if (maxcholestrol > 2000): 
             return True
-        else: # pragma: no cover
+        else:
             return False
     
     def hypertension(self, sbp, dbp):
-        if (sbp > 140) and (dbp > 90): # pragma: no cover
+        
+        '''The function calculates whether the patient has Hypertension utilizing its Medical Report's Constraints'''
+        
+        if (sbp > 140) and (dbp > 90):
             return True
-        else: # pragma: no cover
+        else: 
             return False
     
-    def kidneyInjury(self, maxCreatinine, prevMaxCreatinine):
+    def kidneyInjury(self, maxCreatinine):
+        
+        '''The function calculates whether the patient has Kidney Injury utilizing its Medical Report's Constraints'''
         
         # For Acute
-        if (((maxCreatinine) > (1.5 * prevMaxCreatinine)) or ((maxCreatinine > 1.2) and (prevMaxCreatinine <= 1.2))): # pragma: no cover
+        if (((maxCreatinine) > (1.5 * prevMaxCreatinine)) or ((maxCreatinine > 1.2) and (prevMaxCreatinine <= 1.2))):
             a = True
-        else: # pragma: no cover
+        else: 
             a = False
         
         #For Chronic
-        if ((maxCreatinine > 1.2) and (prevMaxCreatinine > 1.2)): # pragma: no cover
+        if ((maxCreatinine > 1.2) and (prevMaxCreatinine > 1.2)): 
             b = True
-        else: # pragma: no cover
+        else: 
             b = False
         
         #For Acute on Chronic
-        if ((maxCreatinine > 1.2) and (prevMaxCreatinine > 1.2) and ((maxCreatinine) > (1.5 * prevMaxCreatinine))): # pragma: no cover
+        if ((maxCreatinine > 1.2) and (prevMaxCreatinine > 1.2) and ((maxCreatinine) > (1.5 * prevMaxCreatinine))): 
             c = True
-        else: # pragma: no cover
+        else:
             c = False
         
         #For Not otherwise specified
-        if (maxCreatinine > 1.2): # pragma: no cover
+        if (maxCreatinine > 1.2):
             d = True
-        else: # pragma: no cover
+        else:
             d = False
             
         return a, b, c, d
         
     def obesity(self, height, weight):
-        if (height > 0) and (weight > 0): # pragma: no cover
-            bmi = (weight)/((height/100)*(height/100))
         
-        if bmi > 30: # pragma: no cover
+        '''The function calculates whether the patient has Obesity utilizing its Medical Report's Constraints'''
+        
+        if (height > 0) and (weight > 0):
+            bmi = (weight)/((height/1000)*(height/100))
+        
+        if bmi > 30:
             return True
-        else: # pragma: no cover
+        else:
             return False
